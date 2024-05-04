@@ -36,15 +36,25 @@ public class MyArray {
             System.out.println("Error : out of index");
         }
         //배열이 꽉 찼을때
-        else if (count >=arraySize) {
+        if (count >=arraySize) {
             System.out.println("Array is full");
         }
-        else{
-            intArray[position] = element;
-            count +=1;
-        }
+        intArray[position] = element;
+        count +=1;
     }
-    public int removeElement(int position){return 0;}
+    public int removeElement(int position){
+        //잘못된 position을 입력하였을때
+        if(position<0 || position>=arraySize){
+            System.out.println("Error : out of index");
+        }
+        //배열에 담기지 않은 위치의 값을 삭제하려 할때
+        if(intArray[position] == 0 ){
+            System.out.println("Error : Can not found position"+position);
+        }
+        int temp  = intArray[position];
+        intArray[position] = 0;
+        return temp;
+    }
     public int getSize(){return 0;}
     public boolean isEmpty(){return true;}
     public int getElement(int position){return 0;}
