@@ -55,14 +55,34 @@ public class MyArray {
         intArray[position] = 0;
         return temp;
     }
-    public int getSize(){return 0;}
-    public boolean isEmpty(){return true;}
-    public int getElement(int position){return 0;}
+    public int getSize(){
+        return count;
+    }
+    public boolean isEmpty(){
+        if(count == 0 ){
+            return true;
+        }
+       else{
+           return false;
+        }
+    }
+    public int getElement(int position){
+        int element  =intArray[position];
+        if(element == 0){
+            System.out.println("Null Error");
+        }
+        return element;}
     public void printAll(){
         for(int elements:intArray){
             System.out.println(elements);
         }
     }
-    public void removeAll(){}
+    public void removeAll(){
+        for(int i=0;i<count;i++){
+            intArray[i] =0;
+        }
+        count = 0;
+        System.out.println("array all removed");
+    }
 }
 
